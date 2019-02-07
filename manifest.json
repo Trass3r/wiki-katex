@@ -1,19 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Wikipedia with MathJax (Development version)",
-  "version": "0.0.13",
+  "name": "Wikipedia with KaTeX",
+  "version": "0.0.1",
 
   "icons": { "16": "wiki-mjax-16.png",
              "48": "wiki-mjax-48.png",
              "128": "wiki-mjax-128.png"
   },
 
-  "description": "Renders Wikipedia equations with MathJax",
-  "web_accessible_resources": ["texvc.js"],
+  "description": "Renders Wikipedia equations with KaTeX",
+  "web_accessible_resources": ["fonts/*.*"],
   "content_scripts": [
     {
-      "matches": ["https://*.wikipedia.org/*", "https://*.wikibooks.org/*", "http://*.wikiwand.com/*", "https://*.wikiwand.com/*"],
-      "js": ["jquery-1.12.4.min.js", "content.js"],
+      "matches": ["https://*.wikipedia.org/*", "https://*.wikibooks.org/*"],
+      "js": ["jquery-3.3.1.min.js", "katex.min.js", "content.js"],
+      "css": ["katex.min.css"],
       "run_at": "document_end"
     }
   ]
